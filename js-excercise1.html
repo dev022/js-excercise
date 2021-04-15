@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="demo"></p>
+        <!-- task1 -->
+        <h3>TASK1</h3>
+        <input type="text" id="inp1">
+        <button type="button" id="btn1" onclick="countLetter()">submit</button><br>
+    
+        <!-- task2 -->
+        <h3>TASK2</h3>
+        name:
+        <input type="text" id="name1"><br>
+        age:
+        <input type="text" id="age1"><br>
+        <button type="button" id="btn2" onclick="displayInput1()">submit</button><br>
+
+        <!-- task3 -->
+        <h3>TASK3</h3>
+        <input type="text" id="str3"><br>
+        <button type="button" id="btn3" onclick="displayChar()">submit</button><br>
+        
+        <!-- task4 -->
+        <h3>TASK4</h3>
+        name:
+        <input type="text" id="name2"><br>
+        age:
+        <input type="text" id="age2"><br>
+        <button type="button" id="btn4" onclick="displayInput2()">submit</button><br>
+        
+        <!-- task5 -->
+        <h3>TASK5</h3>
+        <input type="number" id="num1">
+        <button type="button" id="btn5" onclick="displayOddEven()">submit</button>
+    </body>
+
+    <script>
+        function countLetter(){
+            var x = document.getElementById("inp1").value;
+            document.getElementById("demo").innerHTML=x.length;
+        }
+
+        function displayInput1(){
+            var name1 = document.getElementById("name1").value;
+            var age1 = document.getElementById("age1").value;
+            document.getElementById("demo").style.fontWeight="bold";
+            var obj1={name:name1,age:age1};
+            var a;
+            var result="";
+            for(a in obj1){
+                result = result + obj1[a] + "<br>";
+            }
+            document.getElementById("demo").innerHTML=result;
+        }
+
+        function displayChar(){
+            var str3 = document.getElementById("str3").value;
+            document.getElementById("demo").innerHTML=str3.substr(2,4);
+        }
+
+        function displayInput2(){
+            var name2 = document.getElementById("name2").value;
+            var age2 = document.getElementById("age2").value;
+            document.getElementById("demo").style.fontWeight="bold";
+            var arr1=[name2,age2];
+            document.getElementById("demo").innerHTML=arr1;            
+        }
+
+        function displayOddEven(){
+           var y = document.getElementById("num1").value;
+           if(y%2==1){
+                document.getElementById("demo").style.color="red";
+                document.getElementById("demo").innerHTML=y;     
+           }
+           else{
+                document.getElementById("demo").innerHTML=y;
+           }
+          
+        }
+
+        
+    </script>
+</html>
