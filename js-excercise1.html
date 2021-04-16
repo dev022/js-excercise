@@ -35,11 +35,12 @@
     </body>
 
     <script>
+        //starting of js functions
         function countLetter(){
             //get value of input field
-            var x = document.getElementById("inp1").value;
+            var inpStr = document.getElementById("inp1").value;
             //display
-            document.getElementById("demo").innerHTML=x.length;
+            document.getElementById("demo").innerHTML=inpStr.length;
         }
 
         function displayInput1(){
@@ -63,10 +64,17 @@
         function displayChar(){
             //get value of input field
             var str3 = document.getElementById("str3").value;
-            //display
-            document.getElementById("demo").innerHTML=str3.substr(2,4);
+            //alert if char less then 4
+            if(str3.length<4){
+                alert("Please Enter Atleast 4 Character.");
+            }
+            else{
+                //display
+                document.getElementById("demo").innerHTML=str3.substr(2,4);
+            }
         }
-
+        
+        var arr1=[];
         function displayInput2(){
             //get value of input field
             var name2 = document.getElementById("name2").value;
@@ -74,27 +82,43 @@
             
             //make text bold
             document.getElementById("demo").style.fontWeight="bold";
-            var arr1=[name2,age2];
             
+            //push into an array
+            arr1.push(name2,age2);
+            
+            var i=0;
+            var result1=" ";
+
+            for (i in arr1){
+                result1 = result1 + arr1[i] +"<br>";
+            }
             //display
-            document.getElementById("demo").innerHTML=arr1;            
+            document.getElementById("demo").innerHTML=result1;            
         }
 
+        var oddEvenArray = [];
         function displayOddEven(){
             //get value of input field
-           var y = document.getElementById("num1").value;
-           
-           //odd-even logic
-           if(y%2==1){
+            var inpNum = document.getElementById("num1").value;
+            //odd-even logic
+            if(inpNum%2==1){
+                //inpNum.style.color="red";     
                 document.getElementById("demo").style.color="red";
-                document.getElementById("demo").innerHTML=y;     
-           }
-           else{
-                document.getElementById("demo").innerHTML=y;
-           }
-          
-        }
+            }
+            else{
+                document.getElementById("demo").style.color="black";
+            }
+            
+            //push into an array
+            oddEvenArray.push(inpNum);
+            
+            var i=0;
+            var result1=" ";
 
-        
+            for (i in oddEvenArray){
+                result1 = result1 + oddEvenArray[i] +",";
+            }
+            document.getElementById("demo").innerHTML=result1;
+        }
     </script>
 </html>
