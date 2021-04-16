@@ -98,10 +98,12 @@
 
         var oddEvenArray = [];
         function displayOddEven(){
+            //get value from input field
             var inpNum = document.getElementById("num1").value;
+            
             var getP = document.getElementById("demo");
 
-
+            //odd-even logic
             if(inpNum%2==1){
                 var content = "<span id='newSpan' style='color:red;'>"+inpNum+"</span>";
             }
@@ -109,6 +111,7 @@
                 var content = "<span id='newSpan'>"+inpNum+"</span>";
             }
             
+            //push into an array
             oddEvenArray.push(content);
             var i =0;
             var result = " ";
@@ -117,6 +120,7 @@
                 result = result + oddEvenArray[i];
             }
 
+            //display
             document.getElementById("demo").innerHTML=result;
         }
     </script>
