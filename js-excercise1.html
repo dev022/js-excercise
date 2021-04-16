@@ -98,27 +98,27 @@
 
         var oddEvenArray = [];
         function displayOddEven(){
-            //get value of input field
             var inpNum = document.getElementById("num1").value;
-            //odd-even logic
+            var getP = document.getElementById("demo");
+
+
             if(inpNum%2==1){
-                //inpNum.style.color="red";     
-                document.getElementById("demo").style.color="red";
+                var content = "<span id='newSpan' style='color:red;'>"+inpNum+"</span>";
             }
             else{
-                document.getElementById("demo").style.color="black";
+                var content = "<span id='newSpan'>"+inpNum+"</span>";
             }
             
-            //push into an array
-            oddEvenArray.push(inpNum);
-            
-            var i=0;
-            var result1=" ";
+            oddEvenArray.push(content);
+            var i =0;
+            var result = " ";
 
             for (i in oddEvenArray){
-                result1 = result1 + oddEvenArray[i] +",";
+                result = result + oddEvenArray[i];
             }
-            document.getElementById("demo").innerHTML=result1;
+
+            document.getElementById("demo").innerHTML=result;
+            
         }
     </script>
 </html>
